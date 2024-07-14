@@ -2,6 +2,21 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+You have to create the ```.env``` file with the next content:
+```
+DATABASE_URL=[URL TO YOUR DB]
+NEXT_PUBLIC_SUPABASE_URL=[supabase app url]
+NEXT_PUBLIC_SUPABASE_ANON_KEY=[supabase secret]
+```
+
+Use the following script to login into supabase and generate the schema:
+
+```bash
+npx supabase login
+npx supabase gen types --lang=typescript --project-id mnirrjgrxojtvejwwkrh > app/lib/database.types.ts
+```
+
+
 First, run the development server:
 
 ```bash
